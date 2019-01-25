@@ -73,11 +73,11 @@ class Results extends React.Component {
   render() {
     const { results, isLoading, hasSearched } = { ...this.props }
     if (isLoading) {
-      return <div className="loading">Searching...</div>
+      return <div className="output loading">Searching...</div>
     }
     if (hasSearched && results.length === 0) {
       return (
-        <div className="empty-results">
+        <div className="output empty-results">
           No repositories with gh-pages were found. :(
         </div>
       )
@@ -116,7 +116,7 @@ class Results extends React.Component {
       )
     })
 
-    return <ul className="repos">{items}</ul>
+    return <ul className="output repos">{items}</ul>
   }
 }
 

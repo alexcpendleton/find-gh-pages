@@ -13,6 +13,9 @@ input {
   display: inline-block;
   margin: 0 1rem;
 }
+.output {
+  margin-top: 2rem;
+}
 .repos {
   list-style: none;
   max-width: 600px;
