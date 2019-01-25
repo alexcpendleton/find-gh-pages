@@ -53,8 +53,9 @@ class IndexPage extends React.Component {
         .filter(repo => repo.has_pages)
         .map(repo => {
           const name = repo.name
-          const uri = `http://${username}.github.io/${name}/`
-          return { name, uri }
+          const pagesUri = `http://${username}.github.io/${name}/`
+          const repoUri = repo.html_url
+          return { name, pagesUri, repoUri }
         })
     }
     this.setState({
@@ -81,27 +82,41 @@ class Results extends React.Component {
         </div>
       )
     }
-    const x = results.map(i => {
-      const link = i.uri ? (
+    const items = results.map(i => {
+      const pagesLink = i.pagesUri ? (
         <a
-          href={i.uri}
+          href={i.pagesUri}
+          className="pages-uri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {i.pagesUri}
+        </a>
+      ) : (
+        ''
+      )
+      const repoLink = i.repoUri ? (
+        <a
+          href={i.repoUri}
           className="repo-uri"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {i.uri}
+          {i.repoUri}
         </a>
       ) : (
         ''
       )
       return (
-        <li className="repo">
-          {i.name}
-          {link}
+        <li className="repo" key={i.repoLink}>
+          <span className="repo-name">{i.name}</span>
+          {pagesLink}
+          {repoLink}
         </li>
       )
     })
-    return <ul className="repos">{x}</ul>
+
+    return <ul className="repos">{items}</ul>
   }
 }
 

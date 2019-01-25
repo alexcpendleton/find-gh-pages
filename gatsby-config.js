@@ -3,6 +3,7 @@ module.exports = {
     title: `Which of my Github repositories have Github Pages?`,
     description: `Find out which of your Github repositories have Github Pages enabled. Who can remember?`,
     author: `@alexcpendleton`,
+    githubUri: `https://alexcpendleton.github.com/find-gh-pages/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
