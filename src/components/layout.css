@@ -38,6 +38,7 @@ fieldset {
 }
 .output {
   margin-top: 1rem;
+  min-height: 10rem;
 }
 .repos {
   list-style: none;
@@ -51,7 +52,7 @@ fieldset {
   border: solid 1px #ccc;
   margin: 1rem 0;
   line-height: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
   box-shadow: 1px 2px #cccccc33;
   text-align: center;
 }
@@ -60,7 +61,7 @@ fieldset {
   font-weight: bold;
   margin: 0;
   padding: 0;
-  font-size: 1.25;
+  font-size: 1.25rem;
 }
 .repo-uri {
   display: inline-block;
@@ -70,4 +71,12 @@ fieldset {
 .pages-uri {
   display: inline-block;
   font-size: 1rem;
+}
+
+.footer {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.footer p {
+  margin: 0.5rem;
 }

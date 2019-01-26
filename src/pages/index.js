@@ -18,7 +18,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home" keywords={['find', 'gh-pages', 'github pages']} />
+        <SEO title="" keywords={['find', 'gh-pages', 'github pages']} />
         <main role="main">
           <section>
             <form className="form">
@@ -47,6 +47,16 @@ class IndexPage extends React.Component {
             <Results {...this.state} />
           </section>
         </main>
+        <footer className="footer">
+          <p className="icon-attribution">
+            Icon created by Gan Khoon Layc of the Noun Project
+          </p>
+          <p>
+            <a href="https://www.github.com/alexcpendleton/find-gh-pages">
+              Source code available on Github
+            </a>
+          </p>
+        </footer>
       </Layout>
     )
   }
