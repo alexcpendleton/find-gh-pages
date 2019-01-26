@@ -9,12 +9,35 @@ body {
 h1 {
   /*font-family: Georgia, 'Times New Roman', Times, serif;*/
 }
-input {
-  display: inline-block;
+.form {
+  padding: 0;
+  vertical-align: middle;
+  line-height: 2rem;
+}
+fieldset {
+  border: 0;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.username-label {
+}
+.username-input {
+  height: 1.5rem;
+  font-size: 1rem;
+  width: 150px;
   margin: 0 1rem;
+  padding: 0.25rem;
+}
+.find-button {
+  height: 2.25rem;
+  font-size: 1rem;
+  border-radius: 5px;
 }
 .output {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .repos {
   list-style: none;
@@ -30,16 +53,21 @@ input {
   line-height: 2rem;
   padding: 1rem;
   box-shadow: 1px 2px #cccccc33;
+  text-align: center;
 }
 .repo-name {
   display: block;
   font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25;
 }
 .repo-uri {
-  display: block;
+  display: inline-block;
   font-size: 1rem;
+  padding-left: 1rem;
 }
 .pages-uri {
-  display: block;
+  display: inline-block;
   font-size: 1rem;
 }

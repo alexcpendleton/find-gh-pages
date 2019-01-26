@@ -21,16 +21,30 @@ class IndexPage extends React.Component {
         <SEO title="Home" keywords={['find', 'gh-pages', 'github pages']} />
         <main role="main">
           <section>
-            <form>
-              <label>
-                Your Username
-                <input type="text" onChange={this.handleUsernameChange} />
-              </label>
-              <button type="submit" onClick={this.handleFindClick}>
-                Find Them
-              </button>
-              <Results {...this.state} />
+            <form className="form">
+              <fieldset>
+                <div className="form-row">
+                  <label className="username-label" htmlFor="username">
+                    Your Username
+                  </label>
+                  <input
+                    name="username"
+                    id="username"
+                    type="text"
+                    onChange={this.handleUsernameChange}
+                    className="username-input"
+                  />
+                  <button
+                    type="submit"
+                    onClick={this.handleFindClick}
+                    className="find-button"
+                  >
+                    Find Them
+                  </button>
+                </div>
+              </fieldset>
             </form>
+            <Results {...this.state} />
           </section>
         </main>
       </Layout>
@@ -90,7 +104,7 @@ class Results extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {i.pagesUri}
+          Pages
         </a>
       ) : (
         ''
@@ -102,14 +116,14 @@ class Results extends React.Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {i.repoUri}
+          Repository
         </a>
       ) : (
         ''
       )
       return (
         <li className="repo" key={i.repoLink}>
-          <span className="repo-name">{i.name}</span>
+          <h2 className="repo-name">{i.name}</h2>
           {pagesLink}
           {repoLink}
         </li>
